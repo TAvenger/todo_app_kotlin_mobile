@@ -1,5 +1,11 @@
 # README #
 
+"main" branch is the main branch of the project. It contains 4 different tags
+release-1
+release-2
+release-3
+release-4
+
 ## What is required to build the app
 1. Java JDK 17
 2. Android SDK (Command line tools only)

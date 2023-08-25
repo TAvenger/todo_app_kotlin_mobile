@@ -34,6 +34,22 @@ class MainViewModel @Inject constructor(
             taskDao.insertTask(task)
         }
     }
+
+    fun deleteTask(task: Task) {
+        viewModelScope.launch {
+            taskDao.deleteDask(task)
+        }
+    }
+
+    fun completeTask(task: Task) {
+        viewModelScope.launch {
+            taskDao.updateTask(markTaskAsCompleted(task))
+        }
+    }
+}
+
+fun markTaskAsCompleted(task: Task): Task {
+    return task.copy(isCompleted = 1)
 }
 
 fun createTask(title: String): Task? {

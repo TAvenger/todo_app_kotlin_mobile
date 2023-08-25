@@ -3,6 +3,7 @@ package com.rfomin.todo.ui
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,12 +22,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.rfomin.todo.database.entity.Task
 
 @Composable
 fun TaskList(
     items: List<Task>,
+    onComplete: (Task) -> Unit = {},
+    onDelete: (Task) -> Unit = {}
 ) {
     Box(
         modifier = Modifier
@@ -49,7 +53,9 @@ fun TaskList(
                             Color.Transparent
                         } else {
                             Color(230, 230, 230)
-                        }
+                        },
+                        onComplete = { onComplete(item) },
+                        onDelete = { onDelete(item) }
                     )
                 }
             }
@@ -95,6 +101,8 @@ fun ListHeader() {
 fun TaskRow(
     title: String,
     background: Color = Color.Transparent,
+    onComplete: () -> Unit = {},
+    onDelete: () -> Unit = {}
 ) {
     Row(
         modifier = Modifier
@@ -115,7 +123,38 @@ fun TaskRow(
                 .height(20.dp)
                 .align(Alignment.CenterVertically)
         ) {
+            Row(
+                modifier = Modifier.align(Alignment.Center)
+            ) {
+                Text(
+                    text = "Complete",
+                    textAlign = TextAlign.Center,
+                    textDecoration = TextDecoration.Underline,
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically)
+                        .weight(1f)
+                        .clickable {
+                            onComplete()
+                        }
+                )
 
+                Spacer(
+                    modifier = Modifier
+                        .width(1.dp)
+                        .fillMaxHeight()
+                        .background(color = Color.Black)
+                )
+
+                Text(
+                    text = "Delete",
+                    textAlign = TextAlign.Center,
+                    textDecoration = TextDecoration.Underline,
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically)
+                        .weight(1f)
+                        .clickable { onDelete() }
+                )
+            }
         }
     }
 }

@@ -69,6 +69,12 @@ fun MainScreen(
 
                 TaskList(
                     items = dataState.value ?: emptyList(),
+                    onComplete = {
+                        viewModel.completeTask(it)
+                    },
+                    onDelete = {
+                        viewModel.deleteTask(it)
+                    }
                 )
             }
         }
