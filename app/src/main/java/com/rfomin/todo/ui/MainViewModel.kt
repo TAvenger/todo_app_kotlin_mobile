@@ -25,7 +25,7 @@ class MainViewModel @Inject constructor(
 }
 
 fun createTask(title: String): Task? {
-    if (title.isEmpty()) {
+    if (title.trim().isEmpty()) {
         return null
     }
 
