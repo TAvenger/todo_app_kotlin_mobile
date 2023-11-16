@@ -48,3 +48,4 @@ git clone https://github.com/TAvenger/todo_app_kotlin_mobile.git
 ## How to run unit tests
    Open terminal and run the following command: <br>
    ./gradlew testDebugUnitTest
+   
