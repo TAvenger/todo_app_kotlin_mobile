@@ -29,9 +29,9 @@ git clone https://github.com/TAvenger/todo_app_kotlin_mobile.git
         ~/android_sdk/latest/bin <br>
         ~/android_sdk/latest/lib <br>
     
-    2.4 Add the following lines to your ~/.zshrc file: <br>
-        export ANDROID_HOME=~/android_sdk/ <br>
-        export ANDROID_SDK=~/android_sdk/ <br>
+    2.4 Add the following lines to your \~/.zshrc file: <br>
+        export ANDROID_HOME=\~/android_sdk/ <br>
+        export ANDROID_SDK=\~/android_sdk/ <br>
         export JAVA_HOME=\`/usr/libexec/java_home -v 17\` <br>
 
     relaunch terminal or run the following command: <br>
