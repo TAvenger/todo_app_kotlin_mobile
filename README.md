@@ -5,6 +5,7 @@
 - release-2
 - release-3
 - release-4
+please check CHANGELOG.md for details
 
 ## What is required to build the app
 1. Java JDK 17
@@ -17,6 +18,10 @@ git clone https://github.com/TAvenger/todo_app_kotlin_mobile.git
 ## How to install dependencies.
 1. Download Java JDK 17 from [https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) and install it
 2. Download Command line tools only from [https://developer.android.com/studio#downloads](https://developer.android.com/studio#downloads)
+    2.0 Note: 
+        1) these 2.X steps are written for **Mac OS**. Perhaps it can be reused without changes for Ubuntu. For Windows you will need to 
+        perform Windows-specific steps (updating and configuring PATH)
+        2) There is no direct download link because Google requires to accept terms and conditions on that page before downloading 
 
     2.1 Unzip it to the folder you want to install Android SDK to (e.g. ~/android_sdk) <br>
         by this moment you should have the following folders in the ~/android_sdk folder: <br>
@@ -38,14 +43,15 @@ git clone https://github.com/TAvenger/todo_app_kotlin_mobile.git
         source ~/.zshrc
 
 ## How to build the app
+    Open terminal and run the following command: <br>
+    ./gradlew assembleDebug
 
-   Open terminal and run the following command: <br>
-   ./gradlew assembleDebug
-
-   APK file will be generated in the following folder: <br>
-   app/build/outputs/apk/debug/app-debug.apk
+    APK file will be generated in the following folder: <br>
+    app/build/outputs/apk/debug/app-debug.apk
 
 ## How to run unit tests
-   Open terminal and run the following command: <br>
-   ./gradlew testDebugUnitTest
-   
+    Open terminal and run the following command: <br>
+    ./gradlew testDebugUnitTest
+
+    if tests run **successfully** you should see the message    "BUILD SUCCESSFUL in XXs"  and the exit code should be 0.
+    If something went **wrong** you would see   "BUILD FAILED in XXs"   and the exit code would be other than 0
