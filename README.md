@@ -18,6 +18,7 @@ git clone https://github.com/TAvenger/todo_app_kotlin_mobile.git
 ## How to install dependencies.
 1. Download Java JDK 17 from [https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) and install it
 2. Download Command line tools only from [https://developer.android.com/studio#downloads](https://developer.android.com/studio#downloads)
+ 
     2.0 Note: 
         1) these 2.X steps are written for **Mac OS**. Perhaps it can be reused without changes for Ubuntu. For Windows you will need to 
         perform Windows-specific steps (updating and configuring PATH)
